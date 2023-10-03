@@ -5,4 +5,4 @@ Instructions for vs-code :
 2) In the static folder ,the css and js files for css js elements to work for the webpage.Is from this : https://materializecss.com
 3) All the file is already placed on there places
    
-
+![Screenshot (466)](https://github.com/Dharmendra1286/Forest_Fire-Predictor/assets/141486878/b7f629c6-2d92-41de-8278-738b4c87a9c0)
