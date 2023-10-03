@@ -6,3 +6,4 @@ Instructions for vs-code :
 3) All the file is already placed on there places
    
 ![Screenshot (466)](https://github.com/Dharmendra1286/Forest_Fire-Predictor/assets/141486878/b7f629c6-2d92-41de-8278-738b4c87a9c0)
+![image](https://github.com/Dharmendra1286/Forest_Fire-Predictor/assets/141486878/d8fa04bf-7e25-41f1-9c57-7e26efa393ad)
