@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Forest Fire Prediction</title>
+    <link rel="icon" href="https://thumbs.dreamstime.com/z/forest-fire-icon-vector-sign-symbol-isolated-white-backgr-forest-fire-icon-vector-isolated-white-background-your-web-133758354.jpg?w=2048" type="image/jpeg">
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  
+  <!-- Add CSS for background image and text styling -->
+  <style>
+    body {
+      background-image: url('https://media.istockphoto.com/id/1329940102/photo/vancouver-island-deforestation.jpg?s=1024x1024&w=is&k=20&c=DA_TQAVK4-e3BvV5KVGxrWHl56PB1qtqU1616_iO-JI=');
+      background-size: cover;
+      background-repeat: no-repeat;
+      font-family: 'Times New Roman', serif; /* Use Times New Roman font */
+    }
+
+    /* Apply styles for bold text */
+    label b {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+      <!-- Add your logo image without removing anything 
+      <a id="logo-container" href="#" class="brand-logo">
+        <img src="https://res.cloudinary.com/devpost/image/fetch/s--XvhYs3wh--/c_limit,f_auto,fl_lossy,q_auto:eco,w_900/https://github.com/wang-owen/TheWildfireNetwork/assets/69203168/22a007d6-d469-4b7c-bbc2-75e4c484e0f6" alt="Logo" style="max-height: 64px;">
+      </a>
+      -->
+      <ul class="right hide-on-med-and-down">
+        
+        <a href="https://en.wikipedia.org/wiki/Wildfire" class ="btn-large waves-effect waves-light green" > Click here to Learn More About ForestFire</a></li>
+      </ul>
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Nature is life</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Forest Fire Predictor</h1>
+      <div class="row center">
+        <h5 class="header col s12 light"><label for="first_name"><b>Predict the probability of Forest-Fire Occurrence</b></label></h5>
+      </div>
+
+      <div class="row">
+        <form action='/predict' method="post" class="col s12">
+          <div class="row">
+            <div class="row-content red-text">
+            <div class="input-field col s4">
+              <label for="first_name">Temperature</label><br>
+              <input placeholder="Temperature in Celsius" name="Temperature" id="first_name" type="text" class="validate">
+            </div>
+            <div class="input-field col s4">
+              <label for="last_name">Oxygen</label><br>
+              <input id="last_name" name="Oxygen" placeholder="Oxygen content in ppm"  type="text" class="validate">
+            </div>
+            <div class="input-field col s4">
+              <label for="_name">Humidity</label><br>
+              <input id="_name" name="Humidity" placeholder="Humidity %" type="text" class="validate">
+            </div>
+          </div>
+          <div class="row center">
+            <button type="submit" class="btn-large waves-effect waves-light orange">Predict Probability</button>
+          </div>
+          </div>
+        </form>
+      </div>
+        <!-- Add a section for displaying the error -->
+  <br>
+  {% if error %}
+  <div class="row">
+    <div class="col s12">
+      <div class="card red">
+        <div class="card-content white-text">
+          {{ error }}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}<br>
+
+
+
+  <br>{% if pred1 %}
+  <div class="row">
+    <div class="col s12">
+      <div class="card green">
+        <div class="card-content white-text">
+          {{ pred1}}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}<br>
+
+
+
+  {% if pred %}
+  <div class="row">
+    <div class="col s12">
+      <div class="card blue">
+        <div class="card-content white-text">
+          {{ pred }}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+</div>
+</div>
+
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">I am a college student working on this project.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="{{ url_for('static',filename= 'js/materialize.min.js')}}"></script>
+  <script src="{{ url_for('static',filename= 'js/init.js')}}"></script>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</body>
+</html>

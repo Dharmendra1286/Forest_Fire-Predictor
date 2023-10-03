@@ -1,0 +1,10 @@
+latest version of- 
+Flask
+itsdangerous
+Jinja2
+MarkupSafe
+Werkzeug
+scikit-learn
+pickle
+numpy
+pandas
